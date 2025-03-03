@@ -29,5 +29,11 @@ public class PlayerInteract : MonoBehaviour
                 Cursor.lockState = CursorLockMode.Locked;
             }
         }
+        if (Input.GetKey(KeyCode.LeftControl)) {
+            Cursor.lockState = CursorLockMode.None;
+        }
+        else {
+            Cursor.lockState = CursorLockMode.Locked;
+        }
     }
 }

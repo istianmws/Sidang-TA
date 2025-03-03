@@ -44,9 +44,22 @@ public class MapGenerator : MonoBehaviour {
 
 	void Awake() {
 		falloffMap = FalloffGenerator.GenerateFalloffMap (mapChunkSize);
+		//use values from ParameterTerrain
+		// if (ParameterTerrain.instance == null) {
+		// 	ParameterTerrain.instance = FindObjectOfType<ParameterTerrain> ();
+		// }
+		
+	}
+    void Start()
+    {
+		seed = ParameterTerrain.instance.seed;
+		noiseScale = ParameterTerrain.instance.scale;
+		octaves = ParameterTerrain.instance.octaves;
+		persistance = ParameterTerrain.instance.persistance;
+		lacunarity = ParameterTerrain.instance.lacunarity;
 	}
 
-	public static int mapChunkSize {
+    public static int mapChunkSize {
 		get {
 			if (instance == null) {
 				instance = FindObjectOfType<MapGenerator> ();
