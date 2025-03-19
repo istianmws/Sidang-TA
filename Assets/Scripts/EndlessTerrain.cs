@@ -24,6 +24,10 @@ public class EndlessTerrain : MonoBehaviour {
 	Dictionary<Vector2, TerrainChunk> terrainChunkDictionary = new Dictionary<Vector2, TerrainChunk>();
 	static List<TerrainChunk> terrainChunksVisibleLastUpdate = new List<TerrainChunk>();
 
+	void Awake() {
+		terrainChunkDictionary.Clear();
+		terrainChunksVisibleLastUpdate.Clear();
+	}
 	void Start() {
 		mapGenerator = FindObjectOfType<MapGenerator> ();
 
